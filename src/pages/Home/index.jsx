@@ -1,7 +1,11 @@
+import Banner from '../../components/Banner'
+import picture from '../../assets/home_picture.png'
+import './styles.scss'
+
 function Component() {
     return (
-        <div style={{ height: '768px' }}>
-            <h1>Accueil 🏠</h1>
+        <div className="home">
+            <Banner picture={picture} text="Chez vous, partout et ailleurs" />
         </div>
     )
 }
