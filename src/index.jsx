@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 // Global Styles
-import './styles/index.css'
+import './styles/index.scss'
 
 // Pages
 import AboutPage from './pages/About'

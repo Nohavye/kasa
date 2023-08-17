@@ -1,0 +1,47 @@
+@mixin error-text($color) {
+    color: $color;
+    font-weight: 700;
+    font-size: 288px;
+}
+
+@mixin teaser-text($color) {
+    color: $color;
+    font-weight: 500;
+    font-size: 48px;
+}
+
+@mixin title-text($color) {
+    color: $color;
+    font-weight: 500;
+    font-size: 36px;
+}
+
+@mixin large-label-text($color) {
+    color: $color;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+@mixin medium-label-text($color) {
+    color: $color;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+@mixin small-label-text($color) {
+    color: $color;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+@mixin medium-text($color) {
+    color: $color;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+@mixin medium-text($color) {
+    color: $color;
+    font-weight: 400;
+    font-size: 18px;
+}

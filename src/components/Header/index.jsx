@@ -1,14 +1,27 @@
+import './styles.scss'
+import { Link, useLocation } from 'react-router-dom'
+
 function Component() {
+    const location = useLocation()
+
+    function linkDecorator(route) {
+        return {
+            textDecoration: location.pathname === route ? 'underline' : 'none',
+        }
+    }
+
     return (
-        <div
-            style={{
-                border: '1px solid black',
-                height: '64px',
-                backgroundColor: '#666666',
-            }}
-        >
-            Header
-        </div>
+        <header>
+            <img alt="Kasa" />
+            <nav>
+                <Link style={linkDecorator('/')} to="/">
+                    Accueil
+                </Link>
+                <Link style={linkDecorator('/about')} to="/about">
+                    À propos
+                </Link>
+            </nav>
+        </header>
     )
 }
 

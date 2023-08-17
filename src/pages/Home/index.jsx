@@ -1,6 +1,6 @@
 function Component() {
     return (
-        <div>
+        <div style={{ height: '768px' }}>
             <h1>Accueil 🏠</h1>
         </div>
     )

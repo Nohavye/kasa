@@ -1,14 +1,11 @@
+import './styles.scss'
+
 function Component() {
     return (
-        <div
-            style={{
-                border: '1px solid black',
-                height: '64px',
-                backgroundColor: '#666666',
-            }}
-        >
-            Footer
-        </div>
+        <footer>
+            <img alt="Kasa" />
+            <p>© 2020 Kasa. All rights reserved</p>
+        </footer>
     )
 }
 
