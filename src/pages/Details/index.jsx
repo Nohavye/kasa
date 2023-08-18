@@ -5,6 +5,7 @@ import { AppContext } from '../../context'
 import Banner from '../../components/Banner'
 import Tag from '../../components/Tag'
 import Rating from '../../components/Rating'
+import Dropdown from '../../components/Dropdown'
 
 function Component() {
     const { index } = useParams()
@@ -45,7 +46,20 @@ function Component() {
                 </div>
             </div>
 
-            <p>{JSON.stringify(details)}</p>
+            <div className="describeSection">
+                <Dropdown
+                    className="dropdown"
+                    title="Description"
+                    textArray={[details.description]}
+                    Open={true}
+                />
+                <Dropdown
+                    className="dropdown"
+                    title="Équipements"
+                    textArray={details.equipments}
+                    Open={true}
+                />
+            </div>
         </div>
     )
 }

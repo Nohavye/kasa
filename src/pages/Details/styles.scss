@@ -44,3 +44,13 @@
     display: flex;
     gap: 8px;
 }
+
+.describeSection {
+    display: flex;
+    align-items: stretch;
+    gap: 60px;
+
+    .dropdown {
+        width: 50%;
+    }
+}
