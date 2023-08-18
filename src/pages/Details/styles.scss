@@ -2,33 +2,45 @@
 @import '../../styles/mixins/texts';
 @import '../../styles/variables/colors';
 
-.wrapper {
+.details {
     @include page-wrapper;
-    .titleSection {
-        display: flex;
-        justify-content: space-between;
+}
 
-        h1 {
-            @include title-text($primary-color);
-            margin-bottom: 10px;
-        }
+.titleSection {
+    display: flex;
+    justify-content: space-between;
 
-        span {
-            @include medium-label-text($primary-color);
-            line-height: 26px;
-            text-align: right;
-        }
-
-        img {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-        }
-
-        .hostDivision {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
+    h1 {
+        @include title-text($primary-color);
+        margin-bottom: 10px;
     }
+
+    span {
+        @include medium-label-text($primary-color);
+        line-height: 26px;
+        text-align: right;
+    }
+
+    img {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+    }
+
+    .hostDivision {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+}
+
+.ratingSection {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tagWrapper {
+    display: flex;
+    gap: 8px;
 }

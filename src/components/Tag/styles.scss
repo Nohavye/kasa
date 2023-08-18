@@ -1,0 +1,13 @@
+@import '../../styles/variables/colors';
+@import '../../styles/mixins/texts';
+
+.tag {
+    background-color: $primary-color;
+    width: max-content;
+    padding: 2px 32px;
+    border-radius: 10px;
+
+    span {
+        @include small-label-text(white);
+    }
+}
