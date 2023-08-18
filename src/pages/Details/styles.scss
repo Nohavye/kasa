@@ -1,0 +1,34 @@
+@import '../../styles/mixins/elements';
+@import '../../styles/mixins/texts';
+@import '../../styles/variables/colors';
+
+.wrapper {
+    @include page-wrapper;
+    .titleSection {
+        display: flex;
+        justify-content: space-between;
+
+        h1 {
+            @include title-text($primary-color);
+            margin-bottom: 10px;
+        }
+
+        span {
+            @include medium-label-text($primary-color);
+            line-height: 26px;
+            text-align: right;
+        }
+
+        img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+        }
+
+        .hostDivision {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+    }
+}

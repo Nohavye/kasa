@@ -10,8 +10,12 @@ import LodgmentList from '../../components/LodgmentList'
 
 function Component() {
     return (
-        <div className="home">
-            <Banner picture={picture} text="Chez vous, partout et ailleurs" />
+        <div className="wrapper">
+            <Banner
+                picture={picture}
+                text="Chez vous, partout et ailleurs"
+                dimmed={true}
+            />
             <LodgmentList />
         </div>
     )

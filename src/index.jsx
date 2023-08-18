@@ -13,24 +13,26 @@ import ErrorPage from './pages/Error'
 import HomePage from './pages/Home'
 
 // Components
-import App from './components/App'
 import Header from './components/Header'
 import Footer from './components/Footer'
+
+// Providers
+import { AppProvider } from './context'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <React.StrictMode>
         <BrowserRouter>
-            <App>
+            <AppProvider>
                 <Header />
                 <Routes>
                     <Route path="*" element={<ErrorPage />} />
                     <Route path="/" element={<HomePage />} />
                     <Route path="/about" element={<AboutPage />} />
-                    <Route path="/details/:id" element={<DetailsPage />} />
+                    <Route path="/details/:index" element={<DetailsPage />} />
                 </Routes>
                 <Footer />
-            </App>
+            </AppProvider>
         </BrowserRouter>
     </React.StrictMode>,
 )

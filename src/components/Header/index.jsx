@@ -4,11 +4,9 @@ import { Link, useLocation } from 'react-router-dom'
 function Component() {
     const location = useLocation()
 
-    function linkDecorator(route) {
-        return {
-            textDecoration: location.pathname === route ? 'underline' : 'none',
-        }
-    }
+    const linkDecorator = (route) => ({
+        textDecoration: location.pathname === route ? 'underline' : 'none',
+    })
 
     return (
         <header>

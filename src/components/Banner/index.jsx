@@ -1,20 +1,17 @@
 import './styles.scss'
-import { useLocation } from 'react-router-dom'
 
-function Component({ picture, text = '' }) {
-    const location = useLocation()
+function Component({ picture, text = '', dimmed = false }) {
+    const bannerHeight = {
+        height: dimmed ? '224px' : '416px',
+    }
 
-    function bannerHeight() {
-        return {
-            height: location.pathname.startsWith('/details')
-                ? '416px'
-                : '224px',
-        }
+    const imgOpacity = {
+        opacity: dimmed ? '70%' : '100%',
     }
 
     return (
-        <div className="banner" style={bannerHeight()}>
-            <img src={picture} alt="banner" />
+        <div className="banner" style={bannerHeight}>
+            <img src={picture} alt="banner" style={imgOpacity} />
             {text !== '' && <h1>{text}</h1>}
         </div>
     )

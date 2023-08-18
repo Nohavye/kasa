@@ -1,13 +1,14 @@
 import './styles.scss'
+import { Link } from 'react-router-dom'
 
-function Component({ title, cover }) {
+function Component({ index, title, cover }) {
     return (
-        <div className="lodgmentCard">
+        <Link className="lodgmentCard" to={`/details/${index}`}>
             <img src={cover} alt="lodgment" />
             <div>
                 <span>{title}</span>
             </div>
-        </div>
+        </Link>
     )
 }
 

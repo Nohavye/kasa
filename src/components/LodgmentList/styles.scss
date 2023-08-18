@@ -1,6 +1,8 @@
+@import '../../styles/variables/colors';
+
 .lodgmentList {
     padding: 60px;
-    background-color: #e5e5e5;
+    background-color: $secondary-color;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

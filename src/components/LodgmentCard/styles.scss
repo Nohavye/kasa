@@ -29,4 +29,8 @@
             @include medium-label-text(white);
         }
     }
+
+    &:hover {
+        cursor: pointer;
+    }
 }

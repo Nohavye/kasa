@@ -1,17 +1,34 @@
-import { useParams, useLocation } from 'react-router-dom'
-import picture from '../../assets/home_picture.png'
+import './styles.scss'
+import { useParams } from 'react-router-dom'
+import { useContext } from 'react'
+import { AppContext } from '../../context'
 import Banner from '../../components/Banner'
 
 function Component() {
-    const { id } = useParams()
-    const location = useLocation()
+    const { index } = useParams()
+    const { data } = useContext(AppContext)
+
+    const details = data[index]
+    const hostName = details.host.name.split(' ')
 
     return (
-        <div style={{ height: '768px' }}>
-            <h1>
-                Fiche Logement 📔 {id} {location.pathname}
-            </h1>
-            <Banner picture={picture} text={location.pathname} />
+        <div className="wrapper">
+            <Banner picture={details.cover} />
+            <div className="titleSection">
+                <div className="tilteDivision">
+                    <h1>{details.title}</h1>
+                    <span>{details.location}</span>
+                </div>
+                <div className="hostDivision">
+                    <span>
+                        {hostName[0]}
+                        <br />
+                        {hostName[1]}
+                    </span>
+                    <img src={details.host.picture} alt="host" />
+                </div>
+            </div>
+            <p>{JSON.stringify(details)}</p>
         </div>
     )
 }
