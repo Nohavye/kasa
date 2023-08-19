@@ -1,20 +1,12 @@
 import './styles.scss'
 
-function Component({ picture, text = '', dimmed = false }) {
-    const bannerHeight = {
-        height: dimmed ? '224px' : '416px',
-    }
-
-    const imgOpacity = {
-        opacity: dimmed ? '70%' : '100%',
-    }
-
+function Banner({ picture, text = '' }) {
     return (
-        <div className="banner" style={bannerHeight}>
-            <img src={picture} alt="banner" style={imgOpacity} />
+        <div className="banner">
+            <img src={picture} alt="banner" />
             {text !== '' && <h1>{text}</h1>}
         </div>
     )
 }
 
-export default Component
+export default Banner

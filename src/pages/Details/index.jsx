@@ -2,7 +2,7 @@ import './styles.scss'
 import { useParams } from 'react-router-dom'
 import { useContext } from 'react'
 import { AppContext } from '../../context'
-import Banner from '../../components/Banner'
+import Galery from '../../components/Galery'
 import Tag from '../../components/Tag'
 import Rating from '../../components/Rating'
 import Dropdown from '../../components/Dropdown'
@@ -16,7 +16,7 @@ function Component() {
 
     return (
         <div className="details">
-            <Banner picture={details.cover} />
+            <Galery picturesArray={details.pictures} />
             <div>
                 <div className="titleSection">
                     <div className="tilteDivision">
