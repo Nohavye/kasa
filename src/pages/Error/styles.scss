@@ -1,0 +1,25 @@
+@import '../../styles/variables/colors';
+@import '../../styles/mixins/elements';
+@import '../../styles/mixins/texts';
+
+.error {
+    @include page-wrapper;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        @include error-text($primary-color);
+        margin-top: 80px;
+    }
+
+    span {
+        @include title-text($primary-color);
+    }
+
+    a {
+        @include medium-label-text($primary-color);
+        text-decoration: underline;
+        margin: 140px 0;
+    }
+}

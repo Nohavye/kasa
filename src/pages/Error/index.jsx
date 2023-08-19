@@ -1,7 +1,12 @@
+import './styles.scss'
+import { Link } from 'react-router-dom'
+
 function Component() {
     return (
-        <div style={{ height: '768px' }}>
-            <h1>Oups... Cette page n'existe pas 'erreur 404' ❗</h1>
+        <div className="error">
+            <h1>404</h1>
+            <span>Oups! La page que vous demandez n'existe pas.</span>
+            <Link to="/">Retourner sur la page d’accueil</Link>
         </div>
     )
 }
