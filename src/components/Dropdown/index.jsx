@@ -12,7 +12,7 @@ function Component({ title, textArray = [], Open = false, large = false }) {
 
     return (
         <div
-            className="dropdown"
+            className={`dropdown${large ? ' dropdown-large' : ''}`}
             style={{ backgroundColor: !isOpen && 'transparent' }}
         >
             <div className="header" onClick={toggle}>

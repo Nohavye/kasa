@@ -1,0 +1,13 @@
+@import '../../styles/mixins/elements';
+
+.about {
+    @include page-wrapper;
+
+    .dropdownWrapper {
+        padding: 110px;
+        padding-top: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+}

@@ -40,7 +40,7 @@
     font-size: 24px;
 }
 
-@mixin medium-text($color) {
+@mixin small-text($color) {
     color: $color;
     font-weight: 400;
     font-size: 18px;

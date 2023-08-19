@@ -51,13 +51,11 @@ function Component() {
                     className="dropdown"
                     title="Description"
                     textArray={[details.description]}
-                    Open={true}
                 />
                 <Dropdown
                     className="dropdown"
                     title="Équipements"
                     textArray={details.equipments}
-                    Open={true}
                 />
             </div>
         </div>
