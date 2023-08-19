@@ -9,5 +9,10 @@
         display: flex;
         flex-direction: column;
         gap: 30px;
+
+        @include mobile-mode {
+            padding: 0;
+            padding-bottom: 110px;
+        }
     }
 }

@@ -15,11 +15,26 @@
 
     span {
         @include title-text($primary-color);
+        text-align: center;
     }
 
     a {
         @include medium-label-text($primary-color);
         text-decoration: underline;
         margin: 140px 0;
+    }
+
+    @include mobile-mode {
+        h1 {
+            font-size: 96px;
+        }
+
+        span {
+            font-size: 18px;
+        }
+
+        a {
+            font-size: 14px;
+        }
     }
 }

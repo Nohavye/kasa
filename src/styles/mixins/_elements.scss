@@ -4,4 +4,15 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 50px;
+
+    @include mobile-mode {
+        padding: 20px 0;
+        gap: 20px;
+    }
+}
+
+@mixin mobile-mode {
+    @media screen and (max-width: 880px) {
+        @content;
+    }
 }

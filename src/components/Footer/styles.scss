@@ -1,4 +1,5 @@
 @import '../../styles/mixins/texts';
+@import '../../styles/mixins/elements';
 
 footer {
     display: flex;
@@ -9,6 +10,11 @@ footer {
     padding: 50px 0 30px 0;
     background-color: black;
 
+    width: 100vw;
+    height: 124px;
+    position: absolute;
+    left: 0;
+
     img {
         content: url(../../assets/logo_white.svg);
         height: 42px;
@@ -16,5 +22,14 @@ footer {
 
     p {
         @include large-label-text(white);
+        text-align: center;
+    }
+
+    @include mobile-mode {
+        gap: 30px;
+
+        p {
+            @include xsmall-label-text(white);
+        }
     }
 }

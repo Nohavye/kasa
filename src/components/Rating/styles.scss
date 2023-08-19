@@ -1,4 +1,14 @@
+@import '../../styles/mixins/elements';
+
 .rating {
     display: flex;
     gap: 14px;
+
+    @include mobile-mode {
+        gap: 6px;
+
+        img {
+            height: 14px;
+        }
+    }
 }

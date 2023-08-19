@@ -43,14 +43,25 @@ function Component() {
                             </div>
                         </div>
 
-                        <div className="ratingSection">
+                        <div className="tagSection">
                             <div className="tagWrapper">
                                 {data[index].tags.map((tag, index) => (
                                     <Tag key={`tag-${index}`} text={tag} />
                                 ))}
                             </div>
-                            <div>
+                            <div className="ratingWrapper">
                                 <Rating number={data[index].rating} />
+                                <div className="hostDivision-mobile">
+                                    <span>
+                                        {data[index].host.name.split(' ')[0]}
+                                        <br />
+                                        {data[index].host.name.split(' ')[1]}
+                                    </span>
+                                    <img
+                                        src={data[index].host.picture}
+                                        alt="host"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>

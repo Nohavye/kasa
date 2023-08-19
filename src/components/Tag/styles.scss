@@ -1,13 +1,24 @@
 @import '../../styles/variables/colors';
 @import '../../styles/mixins/texts';
+@import '../../styles/mixins/elements';
 
 .tag {
     background-color: $primary-color;
     width: max-content;
-    padding: 2px 32px;
+    padding: 4px 32px;
     border-radius: 10px;
+
+    display: flex;
 
     span {
         @include small-label-text(white);
+        text-align: center;
+    }
+
+    @include mobile-mode {
+        padding: 4px 16px;
+        span {
+            @include xxsmall-label-text(white);
+        }
     }
 }

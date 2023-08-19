@@ -1,19 +1,24 @@
+@import './mixins/elements';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;1,400&display=swap');
 
 * {
-    // border: 1px solid gray;
     margin: 0;
 }
 
 body {
-    padding-top: 30px;
+    box-sizing: border-box;
+    padding: 30px 100px 0 100px;
     margin: auto;
-    max-width: 1240px;
+    max-width: 1440px;
     font-family: -apple-system, Montserrat, BlinkMacSystemFont, 'Segoe UI',
         'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
         'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    @include mobile-mode {
+        padding: 20px 20px 0 20px;
+    }
 }
 
 a {
