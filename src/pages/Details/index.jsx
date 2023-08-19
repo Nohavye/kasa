@@ -1,6 +1,6 @@
 import './styles.scss'
-import { useParams } from 'react-router-dom'
-import { useContext } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import { useContext, useEffect } from 'react'
 import { AppContext } from '../../context'
 import Galery from '../../components/Galery'
 import Tag from '../../components/Tag'
@@ -10,55 +10,66 @@ import Dropdown from '../../components/Dropdown'
 function Component() {
     const { index } = useParams()
     const { data } = useContext(AppContext)
+    const navigate = useNavigate()
 
-    const details = data[index]
-    const hostName = details.host.name.split(' ')
+    useEffect(() => {
+        if (data[index] === undefined) {
+            navigate('/error')
+        }
+    }, [data, index, navigate])
 
     return (
-        <div className="details">
-            <Galery picturesArray={details.pictures} />
-            <div>
-                <div className="titleSection">
-                    <div className="tilteDivision">
-                        <h1>{details.title}</h1>
-                        <span>{details.location}</span>
-                    </div>
-
-                    <div className="hostDivision">
-                        <span>
-                            {hostName[0]}
-                            <br />
-                            {hostName[1]}
-                        </span>
-                        <img src={details.host.picture} alt="host" />
-                    </div>
-                </div>
-
-                <div className="ratingSection">
-                    <div className="tagWrapper">
-                        {details.tags.map((tag) => (
-                            <Tag text={tag} />
-                        ))}
-                    </div>
+        <>
+            {data[index] !== undefined && (
+                <div className="details">
+                    <Galery picturesArray={data[index].pictures} />
                     <div>
-                        <Rating number={details.rating} />
+                        <div className="titleSection">
+                            <div className="tilteDivision">
+                                <h1>{data[index].title}</h1>
+                                <span>{data[index].location}</span>
+                            </div>
+
+                            <div className="hostDivision">
+                                <span>
+                                    {data[index].host.name.split(' ')[0]}
+                                    <br />
+                                    {data[index].host.name.split(' ')[1]}
+                                </span>
+                                <img
+                                    src={data[index].host.picture}
+                                    alt="host"
+                                />
+                            </div>
+                        </div>
+
+                        <div className="ratingSection">
+                            <div className="tagWrapper">
+                                {data[index].tags.map((tag, index) => (
+                                    <Tag key={`tag-${index}`} text={tag} />
+                                ))}
+                            </div>
+                            <div>
+                                <Rating number={data[index].rating} />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="describeSection">
+                        <Dropdown
+                            className="dropdown"
+                            title="Description"
+                            textArray={[data[index].description]}
+                        />
+                        <Dropdown
+                            className="dropdown"
+                            title="Équipements"
+                            textArray={data[index].equipments}
+                        />
                     </div>
                 </div>
-            </div>
-
-            <div className="describeSection">
-                <Dropdown
-                    className="dropdown"
-                    title="Description"
-                    textArray={[details.description]}
-                />
-                <Dropdown
-                    className="dropdown"
-                    title="Équipements"
-                    textArray={details.equipments}
-                />
-            </div>
-        </div>
+            )}
+        </>
     )
 }
 

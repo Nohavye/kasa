@@ -21,8 +21,8 @@ function Component({ title, textArray = [], Open = false, large = false }) {
             </div>
             {isOpen && (
                 <div className="content">
-                    {textArray.map((text) => (
-                        <span>{text}</span>
+                    {textArray.map((text, index) => (
+                        <span key={`dropdown-text-${index}`}>{text}</span>
                     ))}
                 </div>
             )}
