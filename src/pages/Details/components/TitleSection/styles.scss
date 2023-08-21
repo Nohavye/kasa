@@ -1,0 +1,29 @@
+@import '../../../../styles/variables/colors';
+@import '../../../../styles/mixins/elements';
+@import '../../../../styles/mixins/texts';
+
+.titleSection {
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+        @include title-text($primary-color);
+        margin-bottom: 10px;
+    }
+
+    span {
+        @include medium-label-text($primary-color);
+        line-height: 26px;
+        text-align: right;
+    }
+
+    @include mobile-mode {
+        h1 {
+            @include medium-label-text($primary-color);
+        }
+
+        span {
+            @include small-label-text($primary-color);
+        }
+    }
+}

@@ -1,0 +1,24 @@
+@import '../../../../styles/mixins/elements';
+
+.detailsWrapper {
+    @include page-wrapper;
+}
+
+.describeSection {
+    display: flex;
+    align-items: stretch;
+    gap: 60px;
+
+    .dropdown {
+        width: 50%;
+    }
+
+    @include mobile-mode {
+        flex-direction: column;
+        gap: 20px;
+
+        .dropdown {
+            width: 100%;
+        }
+    }
+}

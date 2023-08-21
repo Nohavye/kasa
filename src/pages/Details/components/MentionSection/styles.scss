@@ -1,0 +1,12 @@
+@import '../../../../styles/mixins/elements';
+
+.mentionSection {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+
+    @include mobile-mode {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

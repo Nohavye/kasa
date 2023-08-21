@@ -1,0 +1,39 @@
+@import '../../../../styles/variables/colors';
+@import '../../../../styles/mixins/elements';
+@import '../../../../styles/mixins/texts';
+
+.hostProfile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    img {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+    }
+
+    @include mobile-mode {
+        display: none;
+    }
+}
+
+.hostProfile-mobile {
+    display: none;
+    align-items: center;
+    gap: 16px;
+
+    img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+    }
+
+    span {
+        @include xsmall-label-text($primary-color);
+    }
+
+    @include mobile-mode {
+        display: flex;
+    }
+}
