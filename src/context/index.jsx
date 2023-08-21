@@ -1,17 +1,22 @@
-import { createContext, useState } from 'react'
-import jsonData from '../data/data.json'
+import { createContext } from 'react'
+import { useFetch } from '../hooks'
 
 export const AppContext = createContext()
 
 export const AppProvider = ({ children }) => {
-    const [data, setData] = useState(jsonData)
-
-    const reloadData = () => {
-        setData(jsonData)
-    }
+    const { reload, data, isLoading, error } = useFetch(
+        'http://localhost:3000/data/data.json',
+    )
 
     return (
-        <AppContext.Provider value={{ data, reloadData }}>
+        <AppContext.Provider
+            value={{
+                reloadData: reload,
+                data,
+                dataIsLoading: isLoading,
+                dataError: error,
+            }}
+        >
             {children}
         </AppContext.Provider>
     )

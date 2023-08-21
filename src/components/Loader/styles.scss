@@ -1,0 +1,20 @@
+@import '../../styles/variables/colors';
+
+@keyframes rotateLoader {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loader {
+    padding: 10px;
+    border: 6px solid $primary-color;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: rotateLoader 1s infinite linear;
+    height: 0;
+    width: 0;
+}

@@ -1,24 +1,34 @@
-import { useEffect, useState } from 'react'
 import './styles.scss'
+import { useEffect, useState } from 'react'
+import { useContext } from 'react'
+import { AppContext } from '../../context'
 
 function Component() {
-    const [footerDown, setFooterDown] = useState()
+    const { dataIsLoading } = useContext(AppContext)
+    const [isAnchored, setAnchored] = useState()
+
+    const mustBeAnchored = () =>
+        document.body.clientHeight <
+        window.innerHeight - document.querySelector('footer').clientHeight
 
     useEffect(() => {
-        setFooterDown(document.body.clientHeight < window.innerHeight - 210)
-        const handleBodyResize = () => {
-            setFooterDown(document.body.clientHeight < window.innerHeight - 210)
+        const handle = () => {
+            setAnchored(mustBeAnchored())
         }
-        window.addEventListener('resize', handleBodyResize)
-        document.body.addEventListener('click', handleBodyResize)
+
+        window.addEventListener('resize', handle)
+        document.body.addEventListener('click', handle)
+
         return () => {
-            window.removeEventListener('resize', handleBodyResize)
-            document.body.removeEventListener('click', handleBodyResize)
+            window.removeEventListener('resize', handle)
+            document.body.removeEventListener('click', handle)
         }
     }, [])
 
+    useEffect(() => setAnchored(mustBeAnchored()), [dataIsLoading])
+
     return (
-        <footer style={{ bottom: footerDown ? '0' : 'auto' }}>
+        <footer style={{ bottom: isAnchored ? '0' : 'auto' }}>
             <img alt="Kasa" />
             <p>© 2020 Kasa. All rights reserved</p>
         </footer>

@@ -1,5 +1,6 @@
 @import '../../styles/variables/colors';
 @import '../../styles/mixins/elements';
+@import '../../styles/mixins/texts';
 
 .lodgmentList {
     padding: 60px;
@@ -9,6 +10,10 @@
     justify-content: center;
     gap: 50px;
     border-radius: 25px;
+
+    .errorMessage {
+        @include medium-label-text($primary-color);
+    }
 
     @include mobile-mode {
         background-color: transparent;

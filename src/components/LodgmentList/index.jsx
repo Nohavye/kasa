@@ -1,23 +1,36 @@
 import './styles.scss'
 import { useContext } from 'react'
 import { AppContext } from '../../context'
+import Loader from '../Loader'
 import LodgmentCard from '../LodgmentCard'
 
-// import data from '../../data/data.json'
-
 function Component() {
-    const { data } = useContext(AppContext)
+    const { data, dataIsLoading, dataError } = useContext(AppContext)
+
+    if (dataError) {
+        return (
+            <div className="lodgmentList">
+                <span className="errorMessage">
+                    Oups ... il y a eu un problème.
+                </span>
+            </div>
+        )
+    }
 
     return (
         <div className="lodgmentList">
-            {data.map((lodgment, index) => (
-                <LodgmentCard
-                    key={lodgment.id}
-                    index={index}
-                    title={lodgment.title}
-                    cover={lodgment.cover}
-                />
-            ))}
+            {dataIsLoading ? (
+                <Loader />
+            ) : (
+                data.map((lodgment, index) => (
+                    <LodgmentCard
+                        key={lodgment.id}
+                        index={index}
+                        title={lodgment.title}
+                        cover={lodgment.cover}
+                    />
+                ))
+            )}
         </div>
     )
 }
