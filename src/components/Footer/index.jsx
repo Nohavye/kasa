@@ -2,6 +2,7 @@
 import './styles.scss'
 
 // Hooks
+import { useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { useContext } from 'react'
 
@@ -18,6 +19,7 @@ import logo from '../../assets/logo_white.svg'
  * @returns {JSX.Element} Le composant de pied de page.
  */
 function Footer() {
+    const location = useLocation()
     const { dataIsLoading } = useContext(AppContext)
     const [isAnchored, setAnchored] = useState()
 
@@ -43,7 +45,10 @@ function Footer() {
         }
     }, [])
 
-    useEffect(() => setAnchored(mustBeAnchored()), [dataIsLoading])
+    useEffect(
+        () => setAnchored(mustBeAnchored()),
+        [location.pathname, dataIsLoading],
+    )
 
     return (
         <footer style={{ bottom: isAnchored ? '0' : 'auto' }}>

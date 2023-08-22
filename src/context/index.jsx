@@ -20,7 +20,11 @@ export const AppContext = createContext()
  */
 export const AppProvider = ({ children }) => {
     const { reload, data, isLoading, error } = useFetch(
-        'http://localhost:3000/data/data.json',
+        window.location.href.startsWith('http://localhost:3000')
+            ? 'http://localhost:3000/data/data.json'
+            : window.location.href.startsWith('http://192.168.0.128:3000')
+            ? 'http://192.168.0.128:3000/data/data.json'
+            : '',
     )
 
     return (
