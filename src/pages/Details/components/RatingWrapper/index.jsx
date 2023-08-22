@@ -1,4 +1,7 @@
+// Styles
 import './styles.scss'
+
+// Components
 import Rating from '../../../../components/Rating'
 import HostProfile from '../HostProfile'
 

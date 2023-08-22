@@ -1,4 +1,7 @@
+// Styles
 import './styles.scss'
+
+// Components
 import TagsWrapper from '../TagsWrapper'
 import RatingWrapper from '../RatingWrapper'
 

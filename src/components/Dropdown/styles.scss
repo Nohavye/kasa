@@ -1,16 +1,15 @@
-@import '../../styles/variables/colors';
-@import '../../styles/mixins/texts';
-@import '../../styles/mixins/elements';
+@import '../../styles/utils';
 
 .dropdown {
-    background-color: $secondary-color;
     border-radius: 10px;
+    background-color: $secondary-color;
 
     .header {
         @include medium-label-text(white);
-        background-color: $primary-color;
-        padding: 16px;
         border-radius: 10px;
+        padding: 16px;
+        background-color: $primary-color;
+
         display: flex;
         justify-content: space-between;
 
@@ -22,16 +21,18 @@
     .content {
         @include small-text($primary-color);
         padding: 32px 16px 32px;
+
         display: flex;
         flex-direction: column;
     }
 
     @include mobile-mode {
         .header {
+            padding: 8px 12px;
             color: white;
+
             font-size: 13px;
             font-weight: 500;
-            padding: 8px 12px;
 
             img {
                 width: 16px;
@@ -57,10 +58,11 @@
 
     @include mobile-mode {
         .header {
+            padding: 8px 12px;
             color: white;
+
             font-size: 13px;
             font-weight: 500;
-            padding: 8px 12px;
         }
 
         .content {

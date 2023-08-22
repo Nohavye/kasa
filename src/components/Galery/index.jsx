@@ -1,6 +1,10 @@
+// Styles
 import './styles.scss'
-import React from 'react'
+
+// Hooks
 import { useState } from 'react'
+
+// Assets
 import arrowLeft from '../../assets/galery_arrow_left.svg'
 import arrowRight from '../../assets/galery_arrow_right.svg'
 
@@ -9,7 +13,7 @@ import arrowRight from '../../assets/galery_arrow_right.svg'
  *
  * @component
  * @param {Object} props - Les propriétés du composant.
- * @param {string[]} props.picturesArray - Un tableau d'URLs d'images à afficher.
+ * @param {string[]} props.picturesArray - Un tableau d'images à afficher (URLs).
  * @returns {JSX.Element|null} Le composant de galerie d'images.
  */
 function Galery({ picturesArray }) {
@@ -35,7 +39,7 @@ function Galery({ picturesArray }) {
         <div className="galery">
             <img className="view" src={picturesArray[index]} alt="galery" />
             {picturesArray.length !== 1 && (
-                <React.Fragment>
+                <>
                     <img
                         onClick={previous}
                         className="arrowLeft"
@@ -49,7 +53,7 @@ function Galery({ picturesArray }) {
                         alt="navigation"
                     />
                     <span>{`${index + 1}/${picturesArray.length}`}</span>
-                </React.Fragment>
+                </>
             )}
         </div>
     )

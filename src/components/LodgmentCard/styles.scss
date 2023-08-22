@@ -1,33 +1,34 @@
-@import '../../styles/mixins/texts';
-@import '../../styles/mixins/elements';
+@import '../../styles/utils';
 
 .lodgmentCard {
+    position: relative;
     width: 340px;
     height: 340px;
-    overflow: hidden;
-    position: relative;
     border-radius: 10px;
+
+    overflow: hidden;
 
     img {
         width: 100%;
         height: 100%;
+
         object-fit: cover;
     }
 
     div {
         position: absolute;
         top: 70%;
-        background: linear-gradient(to bottom, transparent, black);
         width: 100%;
         height: 30%;
+        background: linear-gradient(to bottom, transparent, black);
 
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
 
         span {
-            margin: 0 20px 20px 20px;
             @include medium-label-text(white);
+            margin: 0 20px 20px 20px;
         }
     }
 

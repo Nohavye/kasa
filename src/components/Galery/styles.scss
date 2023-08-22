@@ -1,25 +1,27 @@
-@import '../../styles/mixins/texts';
-@import '../../styles/mixins/elements';
+@import '../../styles/utils';
 
 .galery {
+    position: relative;
     width: 100%;
     height: 416px;
-    overflow: hidden;
-    position: relative;
     border-radius: 25px;
+
+    overflow: hidden;
 
     .view {
         width: 100%;
         height: 100%;
+
         object-fit: cover;
     }
 
     .arrowLeft,
     .arrowRight {
-        cursor: pointer;
         position: absolute;
-        transform: translate(-50%, -50%);
         top: 50%;
+        transform: translate(-50%, -50%);
+
+        cursor: pointer;
     }
 
     .arrowLeft {
@@ -32,10 +34,10 @@
 
     span {
         @include medium-label-text(white);
-        width: max-content;
         position: absolute;
         top: 92%;
         left: 50%;
+        width: max-content;
         transform: translate(-50%, -50%);
     }
 

@@ -16,7 +16,7 @@ import HomePage from './pages/Home'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
-// Providers
+// Context Providers
 import { AppProvider } from './context'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))

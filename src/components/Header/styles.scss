@@ -1,13 +1,10 @@
-@import '../../styles/variables/colors';
-@import '../../styles/mixins/elements';
-@import '../../styles/mixins/texts';
+@import '../../styles/utils';
 
 header {
     display: flex;
     justify-content: space-between;
 
     img {
-        content: url(../../assets/logo.svg);
         height: 64px;
     }
 

@@ -1,5 +1,11 @@
+// Styles
 import './styles.scss'
+
+// Hooks (Components)
 import { Link, useLocation } from 'react-router-dom'
+
+// Assets
+import logo from '../../assets/logo.svg'
 
 /**
  * Composant d'en-tête de navigation avec des liens actifs.
@@ -21,7 +27,7 @@ function Header() {
 
     return (
         <header>
-            <img alt="Kasa" />
+            <img src={logo} alt="Kasa" />
             <nav>
                 <Link style={linkDecorator('/')} to="/">
                     Accueil

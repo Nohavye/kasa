@@ -1,7 +1,15 @@
+// Styles
 import './styles.scss'
+
+// Hooks
 import { useEffect, useState } from 'react'
 import { useContext } from 'react'
+
+// Context
 import { AppContext } from '../../context'
+
+// Assets
+import logo from '../../assets/logo_white.svg'
 
 /**
  * Composant de pied de page avec ancrage dynamique.
@@ -39,7 +47,7 @@ function Footer() {
 
     return (
         <footer style={{ bottom: isAnchored ? '0' : 'auto' }}>
-            <img alt="Kasa" />
+            <img src={logo} alt="Kasa" />
             <p>© 2020 Kasa. All rights reserved</p>
         </footer>
     )

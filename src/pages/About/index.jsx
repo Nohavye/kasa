@@ -1,6 +1,11 @@
+// Styles
 import './styles.scss'
+
+// Components
 import Banner from '../../components/Banner'
 import Dropdown from '../../components/Dropdown'
+
+// Assets
 import picture from '../../assets/about_picture.png'
 
 /**

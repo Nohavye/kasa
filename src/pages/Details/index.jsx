@@ -1,7 +1,11 @@
+// Hooks
 import { useNavigate, useParams } from 'react-router-dom'
 import { useContext, useEffect } from 'react'
+
+// Context
 import { AppContext } from '../../context'
 
+// Components
 import DetailsWrapper from './components/DetailsWrapper'
 import Loader from '../../components/Loader'
 

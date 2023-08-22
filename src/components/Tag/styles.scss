@@ -1,12 +1,10 @@
-@import '../../styles/variables/colors';
-@import '../../styles/mixins/texts';
-@import '../../styles/mixins/elements';
+@import '../../styles/utils';
 
 .tag {
-    background-color: $primary-color;
     width: max-content;
-    padding: 4px 32px;
     border-radius: 10px;
+    padding: 4px 32px;
+    background-color: $primary-color;
 
     display: flex;
 

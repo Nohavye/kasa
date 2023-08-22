@@ -1,4 +1,7 @@
+// Context
 import { createContext } from 'react'
+
+// Hooks
 import { useFetch } from '../hooks'
 
 /**
@@ -17,7 +20,7 @@ export const AppContext = createContext()
  */
 export const AppProvider = ({ children }) => {
     const { reload, data, isLoading, error } = useFetch(
-        'http://192.168.0.128:3000/data/data.json',
+        'http://localhost:3000/data/data.json',
     )
 
     return (

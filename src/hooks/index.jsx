@@ -1,3 +1,4 @@
+// Hooks
 import { useEffect, useState } from 'react'
 
 /**
@@ -8,8 +9,8 @@ import { useEffect, useState } from 'react'
  */
 export function useFetch(url) {
     const [data, setData] = useState({})
-    const [isReloading, setReloading] = useState(false)
     const [isLoading, setLoading] = useState(true)
+    const [isReloading, setReloading] = useState(false)
     const [error, setError] = useState(false)
 
     useEffect(() => {

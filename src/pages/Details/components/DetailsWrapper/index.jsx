@@ -1,4 +1,7 @@
+// Styles
 import './styles.scss'
+
+// Components
 import Galery from '../../../../components/Galery'
 import TitleSection from '../TitleSection'
 import MentionSection from '../MentionSection'
@@ -9,7 +12,7 @@ import Dropdown from '../../../../components/Dropdown'
  *
  * @component
  * @param {Object} props - Les propriétés du composant.
- * @param {Object} props.data - Les données spécifiques de l'hébergement à afficher.
+ * @param {Object} props.data - Les données de l'hébergement à afficher.
  * @returns {JSX.Element} Le composant englobant les sections de détails.
  */
 function DetailsWrapper({ data }) {

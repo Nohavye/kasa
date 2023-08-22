@@ -1,5 +1,10 @@
+// Styles
 import './styles.scss'
+
+// Hooks
 import { useState } from 'react'
+
+// Assets
 import arrowDown from '../../assets/arrow_down.svg'
 import arrowUp from '../../assets/arrow_up.svg'
 
@@ -17,6 +22,9 @@ import arrowUp from '../../assets/arrow_up.svg'
 function Dropdown({ title, textArray, Open = false, large = false }) {
     const [isOpen, setIsOpen] = useState(Open)
 
+    /**
+     * Bascule l'état du dropdown 'isOpen'.
+     */
     const toggle = () => {
         setIsOpen(!isOpen)
     }

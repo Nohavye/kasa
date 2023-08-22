@@ -1,23 +1,22 @@
-@import '../../styles/variables/colors';
-@import '../../styles/mixins/elements';
-@import '../../styles/mixins/texts';
+@import '../../styles/utils';
 
 .lodgmentList {
+    border-radius: 25px;
     padding: 60px;
     background-color: $secondary-color;
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 50px;
-    border-radius: 25px;
 
     .errorMessage {
         @include medium-label-text($primary-color);
     }
 
     @include mobile-mode {
-        background-color: transparent;
         padding: 0;
+        background-color: transparent;
         gap: 20px;
     }
 }

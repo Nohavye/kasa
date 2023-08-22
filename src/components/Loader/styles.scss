@@ -1,4 +1,4 @@
-@import '../../styles/variables/colors';
+@import '../../styles/utils';
 
 @keyframes rotateLoader {
     from {
@@ -10,11 +10,12 @@
 }
 
 .loader {
-    padding: 10px;
+    height: 0;
+    width: 0;
     border: 6px solid $primary-color;
     border-top-color: transparent;
     border-radius: 50%;
+    padding: 10px;
+
     animation: rotateLoader 1s infinite linear;
-    height: 0;
-    width: 0;
 }

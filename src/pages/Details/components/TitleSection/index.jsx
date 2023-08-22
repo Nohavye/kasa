@@ -1,4 +1,7 @@
+// Styles
 import './styles.scss'
+
+// Components
 import HostProfile from '../HostProfile'
 
 /**

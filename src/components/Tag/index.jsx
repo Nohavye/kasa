@@ -1,11 +1,12 @@
+// Styles
 import './styles.scss'
 
 /**
- * Composant d'affichage d'une étiquette (tag).
+ * Composant d'étiquette (tag).
  *
  * @component
  * @param {string} text - Le texte de l'étiquette.
- * @returns {JSX.Element} Le composant d'affichage d'une étiquette.
+ * @returns {JSX.Element} Le composant d'étiquette.
  */
 function Tag({ text }) {
     return (

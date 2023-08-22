@@ -1,6 +1,13 @@
+// Styles
 import './styles.scss'
+
+// Hooks
 import { useContext } from 'react'
+
+// Context
 import { AppContext } from '../../context'
+
+// Components
 import Loader from '../Loader'
 import LodgmentCard from '../LodgmentCard'
 
@@ -13,6 +20,7 @@ import LodgmentCard from '../LodgmentCard'
 function LodgmentList() {
     const { data, dataIsLoading, dataError } = useContext(AppContext)
 
+    // Retour en cas d'erreur du chargement des données.
     if (dataError) {
         return (
             <div className="lodgmentList">

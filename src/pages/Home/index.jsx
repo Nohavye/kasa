@@ -1,12 +1,12 @@
 // Styles
 import './styles.scss'
 
-// Assets
-import picture from '../../assets/home_picture.png'
-
 // Components
 import Banner from '../../components/Banner'
 import LodgmentList from '../../components/LodgmentList'
+
+// Assets
+import picture from '../../assets/home_picture.png'
 
 /**
  * Composant représentant la page d'accueil de l'application.
