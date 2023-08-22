@@ -2,6 +2,10 @@
 
 Le projet a été initialisé avec [Create React App](https://github.com/facebook/create-react-app).
 
+## Installer les dépendances
+
+Commande: `yarn` ou `yarn install`
+
 ## Démarrer le projet - mode développement
 
 Commande: `yarn start`
