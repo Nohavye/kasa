@@ -3,7 +3,18 @@ import { useState } from 'react'
 import arrowDown from '../../assets/arrow_down.svg'
 import arrowUp from '../../assets/arrow_up.svg'
 
-function Component({ title, textArray = [], Open = false, large = false }) {
+/**
+ * Composant dropdown avec un titre, un contenu textuel et un état ouvert/fermé.
+ *
+ * @component
+ * @param {Object} props - Les propriétés du composant.
+ * @param {string} props.title - Le titre du dropdown.
+ * @param {string[]} props.textArray - Un tableau de textes à afficher dans le contenu.
+ * @param {boolean} [props.Open=false] - L'état initial du dropdown (ouvert ou fermé) (facultatif).
+ * @param {boolean} [props.large=false] - Indique si le dropdown doit être affiché en grand (facultatif).
+ * @returns {JSX.Element} Le composant dropdown.
+ */
+function Dropdown({ title, textArray, Open = false, large = false }) {
     const [isOpen, setIsOpen] = useState(Open)
 
     const toggle = () => {
@@ -30,4 +41,4 @@ function Component({ title, textArray = [], Open = false, large = false }) {
     )
 }
 
-export default Component
+export default Dropdown

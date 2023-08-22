@@ -8,7 +8,13 @@ import picture from '../../assets/home_picture.png'
 import Banner from '../../components/Banner'
 import LodgmentList from '../../components/LodgmentList'
 
-function Component() {
+/**
+ * Composant représentant la page d'accueil de l'application.
+ *
+ * @component
+ * @returns {JSX.Element} Le composant représentant la page d'accueil.
+ */
+function HomePage() {
     return (
         <div className="home">
             <Banner picture={picture} text="Chez vous, partout et ailleurs" />
@@ -17,4 +23,4 @@ function Component() {
     )
 }
 
-export default Component
+export default HomePage

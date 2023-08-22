@@ -5,16 +5,25 @@ import { AppContext } from '../../context'
 import DetailsWrapper from './components/DetailsWrapper'
 import Loader from '../../components/Loader'
 
-function Component() {
+/**
+ * Composant de page de détails affichant les détails d'un hébergement.
+ *
+ * @component
+ * @returns {JSX.Element} Le composant de page de détails.
+ */
+function DetailsPage() {
     const { index } = useParams()
     const { data, dataIsLoading } = useContext(AppContext)
     const navigate = useNavigate()
 
     useEffect(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
+        // Remonter vers le haut de la page lors du chargement de la page
+        document.documentElement.scrollTop = 0
     }, [])
 
     useEffect(() => {
+        // Vérifie si l'élément avec l'index spécifié existe dans les données
+        // Redirige vers la page d'erreur si l'élément n'existe pas
         if (!dataIsLoading && data[index] === undefined) {
             navigate('/error')
         }
@@ -33,4 +42,4 @@ function Component() {
     )
 }
 
-export default Component
+export default DetailsPage

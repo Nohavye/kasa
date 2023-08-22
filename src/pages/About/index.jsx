@@ -3,7 +3,13 @@ import Banner from '../../components/Banner'
 import Dropdown from '../../components/Dropdown'
 import picture from '../../assets/about_picture.png'
 
-function Component() {
+/**
+ * Composant de page "À propos" affichant des informations sur le service.
+ *
+ * @component
+ * @returns {JSX.Element} Le composant de page "À propos".
+ */
+function AboutPage() {
     return (
         <div className="about">
             <Banner picture={picture} />
@@ -41,4 +47,4 @@ function Component() {
     )
 }
 
-export default Component
+export default AboutPage

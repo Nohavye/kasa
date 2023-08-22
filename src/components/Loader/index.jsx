@@ -1,7 +1,13 @@
 import './styles.scss'
 
-function loader() {
+/**
+ * Composant affichant un indicateur visuel pendant le chargement de données.
+ *
+ * @component
+ * @returns {JSX.Element} Le composant 'Loader'.
+ */
+function Loader() {
     return <div className="loader"></div>
 }
 
-export default loader
+export default Loader

@@ -4,7 +4,13 @@ import { AppContext } from '../../context'
 import Loader from '../Loader'
 import LodgmentCard from '../LodgmentCard'
 
-function Component() {
+/**
+ * Composant de liste d'hébergements avec gestion des erreurs et de l'état de chargement.
+ *
+ * @component
+ * @returns {JSX.Element} Le composant de liste d'hébergements.
+ */
+function LodgmentList() {
     const { data, dataIsLoading, dataError } = useContext(AppContext)
 
     if (dataError) {
@@ -35,4 +41,4 @@ function Component() {
     )
 }
 
-export default Component
+export default LodgmentList

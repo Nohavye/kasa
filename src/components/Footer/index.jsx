@@ -3,10 +3,20 @@ import { useEffect, useState } from 'react'
 import { useContext } from 'react'
 import { AppContext } from '../../context'
 
-function Component() {
+/**
+ * Composant de pied de page avec ancrage dynamique.
+ *
+ * @component
+ * @returns {JSX.Element} Le composant de pied de page.
+ */
+function Footer() {
     const { dataIsLoading } = useContext(AppContext)
     const [isAnchored, setAnchored] = useState()
 
+    /**
+     * Vérifie si le pied de page doit être ancré en bas de la page.
+     * @returns {boolean} `true` si le pied de page doit être ancré, sinon `false`.
+     */
     const mustBeAnchored = () =>
         document.body.clientHeight <
         window.innerHeight - document.querySelector('footer').clientHeight
@@ -35,4 +45,4 @@ function Component() {
     )
 }
 
-export default Component
+export default Footer

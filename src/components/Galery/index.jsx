@@ -4,15 +4,29 @@ import { useState } from 'react'
 import arrowLeft from '../../assets/galery_arrow_left.svg'
 import arrowRight from '../../assets/galery_arrow_right.svg'
 
-function Galery({ picturesArray = [] }) {
+/**
+ * Composant de galerie d'images avec navigation.
+ *
+ * @component
+ * @param {Object} props - Les propriétés du composant.
+ * @param {string[]} props.picturesArray - Un tableau d'URLs d'images à afficher.
+ * @returns {JSX.Element|null} Le composant de galerie d'images.
+ */
+function Galery({ picturesArray }) {
     const [index, setIndex] = useState(0)
 
     if (picturesArray.length === 0) return
 
+    /**
+     * Passe à l'image suivante dans la galerie.
+     */
     const next = () => {
         setIndex(index === picturesArray.length - 1 ? 0 : index + 1)
     }
 
+    /**
+     * Passe à l'image précédente dans la galerie.
+     */
     const previous = () => {
         setIndex(index === 0 ? picturesArray.length - 1 : index - 1)
     }
